@@ -395,7 +395,7 @@ background-color: #204536;
   display: flex;
   transition: transform 0.4s ease-in-out;
   will-change: transform;
-  gap: 1rem; /* 控制卡片间距 */
+  gap: 1rem; 
 }
 
 .carousel-btn {
@@ -477,7 +477,7 @@ background-color: #204536;
   left: 0;
   width: 15px;
   height: 15px;
-  background-color: #FFD700; 
+  background-color:  rgba(84, 66, 15, 0.3);
   border-radius: 50%;
   pointer-events: none; 
   transform: translate(-50%, -50%); 
