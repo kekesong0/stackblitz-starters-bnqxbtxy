@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bloom Bake Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://via.placeholder.com/16x16" type="image/png">
+</head>
+
+<body>
+    <header>
+        <div class="nav-left">
+            <a href="./index.html" class="theme-toggle-button">Home</a>
+            <a href="./aboutUsPage.html" class="theme-toggle-button">About Us</a>
+        </div>
+
+        <div class="title">
+            <span class="title-main">KEKE</span>
+            <span class="title-sub">Bake Shop</span>
+        </div>
+
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-toggle-button">Switch Theme</button>
+            <a href="./contactUsPage.html" class="contact-button">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-banner">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Whether you have questions about our products, need assistance with your order, or just want to say hello, feel free to reach out.</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 1782 Fordem Avenue, Madison, WI 53704</p>
+                <p><i class="fas fa-phone"></i> 608-867-9892</p>
+                <p><i class="fas fa-envelope"></i> ksong56@wisc.edu</p>
+                <p><i class="fas fa-clock"></i> Monday - Friday: 8am - 6pm</p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bloom Bake Shop. All Rights Reserved.</p>
+    </footer>
+
+    <div id="cursor"></div>
+
+    <!-- Reusable Modal -->
+    <div id="product-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <img id="modal-image" src="" alt="Product Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <label for="special-instructions">Special Instructions</label>
+            <textarea id="special-instructions" rows="3" placeholder="Enter any special requests..."></textarea>
+            <div class="modal-footer">
+                <button class="quantity-btn" id="decrease-btn">-</button>
+                <span id="quantity">1</span>
+                <button class="quantity-btn" id="increase-btn">+</button>
+                <button class="update-btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

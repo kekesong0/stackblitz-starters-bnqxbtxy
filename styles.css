@@ -1,0 +1,679 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --card-background: #ffffff;
+  --card-border-color: #dddddd;
+  --button-background: rgba(204, 153, 0, 0.3);
+  --button-hover-background: rgba(204, 153, 0, 0.6);
+  --star-color: #FFD700;
+  --title-color: #5b3d2d;
+  --contact-background:#ffffff;
+}
+
+.dark-theme {
+  --background-color: #1a1a1a;
+  --text-color: #f1f1f1;
+  --card-background: #2a2a2a;
+  --card-border-color: #444444;
+  --button-background: #555555;
+  --button-hover-background: #777777;
+  --contact-background:#1a1a1a;
+  --star-color: #FFD700;
+  --title-color: #dddddd;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--card-border-color);
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.nav-left a, .nav-right a {
+  text-decoration: none;
+  color: var(--title-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 1px 1px #cde2e2;
+}
+
+.title-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: var(--title-color);
+  display: block;
+  margin-top: -5px;
+  font-style: italic;
+}
+
+.contact-button {
+  background-color: var(--button-background);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: var(--button-hover-background);
+}
+
+.main-banner {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1523294587484-bae6cc870010?q=80&w=3102&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.main-banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 36, 36, 0.5);
+  z-index: 1;
+}
+
+.main-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  color: #333333;
+}
+
+.main-banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-banner p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2e614e;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #204536;
+}
+
+.products-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.products-section p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 0 0 calc(100% / 4); 
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border-color);
+}
+
+.product-card img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+/* Contact Us Page Styles */
+.contact-banner {
+  background-color: rgba(204, 153, 0, 0.3);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+.contact-banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--title-color);
+}
+
+.contact-banner p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.5rem auto;
+  color: var(--text-color);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--contact-background);
+}
+
+.contact-info,
+.contact-form {
+background-color: #fff;
+padding: 2rem;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+width: 100%;
+}
+
+.contact-info h2,
+.contact-form h2 {
+font-family: 'Playfair Display', serif;
+font-size: 1.5rem;
+color: #5b3d2d;
+margin-bottom: 1rem;
+}
+
+.contact-info p {
+font-size: 0.9rem;
+color: #333;
+margin-bottom: 0.5rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+.contact-info i {
+color: #2e614e;
+}
+
+.contact-form label {
+font-size: 0.9rem;
+color: #333;
+margin-top: 1rem;
+display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+width: 100%;
+padding: 0.5rem;
+margin-top: 0.3rem;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+border-color: #2e614e;
+outline: none;
+}
+
+.contact-form button {
+margin-top: 1rem;
+background-color: #2e614e;
+color: #fff;
+padding: 0.7rem 1.5rem;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1rem;
+transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+background-color: #204536;
+}
+
+/* About Us Page Styles */
+.about-banner {
+  background-color: rgba(204, 153, 0, 0.3);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+.about-banner h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--title-color);
+}
+
+.about-banner p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0.5rem auto;
+  color: var(--text-color);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.about-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-images img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Carousel styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+  gap: 1rem; /* 控制卡片间距 */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9); 
+  color: #333;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #f5b041; 
+  color: #fff;
+  transform: translateY(-50%) scale(1.1); 
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px; 
+}
+
+/* Rating container styles */
+.rating-container {
+  margin-top: 2px; 
+}
+
+.rating {
+  justify-content: center; 
+}
+
+.rating .star {
+  font-size: 1.5rem; 
+  color: #ddd; /* Default Color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.rating .star.selected,
+.rating .star:hover,
+.rating .star:hover ~ .star {
+  color: var(--star-color); /* Yellow for selected or hovered stars */
+}
+
+.rating-result {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.theme-toggle-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--button-background);
+  color: var(--title-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--button-hover-background);
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #FFD700; 
+  border-radius: 50%;
+  pointer-events: none; 
+  transform: translate(-50%, -50%); 
+  z-index: 9999; 
+  transition: background-color 0.2s ease, transform 0.1s ease; 
+}
+
+/* Modal Background */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+/* Hide Modal */
+.hidden {
+  display: none;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  height: 800px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden; 
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+  margin: 5% auto; 
+}
+
+/* Image Styles */
+.modal-content img {
+  width: 100%; 
+  max-height: 380px; 
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Title Styles */
+.modal-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin: 15px 20px 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Description Text Styles */
+.modal-content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  margin: 0 20px 15px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Input Label Styles */
+.modal-content label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 20px 20px 5px;
+  color: #444;
+}
+
+/* Input Field Styles */
+textarea {
+  width: calc(100% - 40px);
+  height: 130px;
+  margin: 0 20px 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: none;
+  font-size: 1rem;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+textarea:focus {
+  border-color: #1e90ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+/* Footer Button Area */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+}
+
+/* Quantity Button Styles */
+.quantity-btn {
+  background-color: #f2f2f2;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Quantity Display Styles */
+#quantity {
+  font-size: 1.1rem;
+  margin: 0 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Primary Button Styles */
+.update-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #333;
+}
+
+/* Close Button Styles */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+      flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+      flex: 0 0 calc(100%);
+  }
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--background-color);
+  font-size: 0.8rem;
+  color: #9a9898;
+}
+
+footer p {
+  margin-top: 0.5rem;
+}
